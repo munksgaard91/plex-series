@@ -46,12 +46,13 @@ h1 .dot{color:var(--plex)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
 .card:nth-child(even){background:#111722}
 .card.done{opacity:.72}
-.head{display:flex;align-items:center;gap:11px;padding:11px 12px;cursor:pointer}
-.posterwrap{width:38px;height:57px;border-radius:6px;flex-shrink:0;background:var(--surface-2);position:relative;overflow:hidden}
+.head{display:flex;align-items:stretch;gap:0;cursor:pointer}
+.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0;margin:11px 11px 0 0}
+.posterwrap{width:60px;align-self:stretch;border-radius:12px 0 0 12px;flex-shrink:0;background:var(--surface-2);position:relative;overflow:hidden;min-height:74px}
 .poster{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
-.posterwrap .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:18px;z-index:0}
+.posterwrap .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:22px;z-index:0}
 .posterwrap.noimg .poster{display:none}
-.hmeta{flex:1;min-width:0}
+.hmeta{flex:1;min-width:0;padding:11px 0 11px 12px}
 .htitle{font-size:15px;font-weight:600;letter-spacing:-0.01em;line-height:1.15;display:flex;align-items:center;gap:7px;min-width:0}
 .htitle .tname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .htitle .pill{flex-shrink:0}
@@ -61,11 +62,13 @@ h1 .dot{color:var(--plex)}
 .pill.miss{background:rgba(229,72,77,.14);color:var(--miss)}
 .pill.ok{background:rgba(63,185,80,.13);color:var(--ok)}
 .pill.arch{background:var(--surface-2);color:var(--muted)}
-.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0}
-.hright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
-.nextup{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--plex);background:var(--plex-dim);padding:2px 6px;border-radius:10px;white-space:nowrap;line-height:1.2}
+.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0;margin-top:4px}
 .card.open .chev{transform:rotate(90deg)}
-.bar{height:3px;background:var(--surface-2);border-radius:3px;overflow:hidden;margin-top:6px}
+.bar{height:3px;background:var(--surface-2);border-radius:3px;overflow:hidden;margin-top:8px}
+.statusrow{margin-top:7px;display:flex;align-items:center;gap:8px}
+.statusrow.next{margin-top:6px;justify-content:space-between}
+.statusrow .nextlabel{font-family:'DM Mono',monospace;font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.statusrow .nextval{font-family:'DM Mono',monospace;font-size:11px;color:var(--plex);white-space:nowrap}
 .bar>i{display:block;height:100%;background:var(--plex);border-radius:3px}
 .card.done .bar>i{background:var(--ok)}
 .body{display:none;border-top:1px solid var(--line);padding:2px 11px 8px}
@@ -406,17 +409,21 @@ function cardHTML(idx){
   const nSeasons=s.seasons.length;
   const nEps=st.airedTotal;
   const meta=`${nSeasons} ${nSeasons===1?'sæson':'sæsoner'} · ${nEps} ${nEps===1?'afsnit':'afsnit'}`;
-  const donePill=st.done?`<span class="pill ok">komplet</span>`:'';
   const archPill=isArchived(s)?`<span class="pill arch">arkiveret</span>`:'';
-  const missPill=st.done?'':`<span class="pill miss">${missingLabel(st)}</span>`;
   const poster=s.poster?`https://image.tmdb.org/t/p/w154${s.poster}`:'';
   const nx=nextUp(s);
-  const nextTag=nx?`<span class="nextup">Næste ${fmtShort(nx.air)}</span>`:'';
+  // Mangler-kort: pill + næste-afsnit får egne rækker under progressbaren
+  let statusRows='';
+  if(!st.done){
+    const missRow=`<div class="statusrow"><span class="pill miss">${missingLabel(st)} mangler</span></div>`;
+    const nextRow=nx?`<div class="statusrow next"><span class="nextlabel">Næste afsnit</span><span class="nextval">${fmtNext(nx.air)}</span></div>`:'';
+    statusRows=`<div class="bar"><i style="width:${pct}%"></i></div>${missRow}${nextRow}`;
+  }
   return `<div class="card ${st.done?'done':''}" data-idx="${idx}" data-id="${s.id}">
     <div class="head" onclick="toggleCard(${idx})">
       <div class="posterwrap"><img class="poster" src="${poster}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><span class="ph">▦</span></div>
-      <div class="hmeta"><div class="htitle"><span class="tname">${esc(s.name)}</span>${archPill||donePill}</div><div class="hsub"><span>${s.year||''}</span><span class="sep">·</span><span>${meta}</span> ${missPill}</div>${st.done?'':`<div class="bar"><i style="width:${pct}%"></i></div>`}</div>
-      <div class="hright">${nextTag}<span class="chev">▶</span></div>
+      <div class="hmeta"><div class="htitle"><span class="tname">${esc(s.name)}</span>${archPill}</div><div class="hsub"><span>${s.year||''}</span><span class="sep">·</span><span>${meta}</span></div>${statusRows}</div>
+      <span class="chev">▶</span>
     </div>
     <div class="body">${s.seasons.map(se=>seasonHTML(idx,se)).join('')}
       <div class="delbtn" onclick="removeShow(${idx})">Fjern serie</div>
@@ -440,6 +447,7 @@ function epHTML(idx,sn,e){
 function esc(t){return (t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function fmtDate(iso){const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];const d=new Date(iso);if(isNaN(d))return iso;return d.getDate()+'. '+m[d.getMonth()]+" '"+String(d.getFullYear()).slice(2);}
 function fmtShort(iso){const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];const d=new Date(iso);if(isNaN(d))return iso;const now=new Date();const days=Math.ceil((d-now)/86400000);if(days<=0)return 'i dag';if(days===1)return 'i morgen';if(days<=7)return 'om '+days+'d';return d.getDate()+'. '+m[d.getMonth()];}
+function fmtNext(iso){const m=['jan.','feb.','mar.','apr.','maj','jun.','jul.','aug.','sep.','okt.','nov.','dec.'];const d=new Date(iso);if(isNaN(d))return iso;const now=new Date();const days=Math.ceil((d-now)/86400000);const dato=d.getDate()+'. '+m[d.getMonth()]+' '+d.getFullYear();let rel='';if(days<=0)rel='i dag';else if(days===1)rel='i morgen';else if(days<=13)rel='om '+days+' dage';else if(days<=60)rel='om '+Math.round(days/7)+' uger';else rel='om '+Math.round(days/30)+' mdr.';return `${dato} · ${rel}`;}
 
 /* ====== INTERAKTION ====== */
 function haptic(ms){ try{ if(navigator.vibrate) navigator.vibrate(ms||10); }catch(e){} }

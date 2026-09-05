@@ -35,10 +35,10 @@ h1 .dot{color:var(--plex)}
 .actbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px;color:var(--text);font-family:'Outfit';font-size:14px;font-weight:600;cursor:pointer;transition:.15s;min-height:44px}
 .actbtn:active{background:var(--surface-2)}
 .actbtn.add{border-style:dashed}
-.actbtn .ic{font-size:15px;color:var(--plex);display:inline-flex}
+.actbtn .ic{font-size:16px;color:var(--plex);display:inline-flex;align-items:center;justify-content:center}
 .refreshlink{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer;margin-top:4px}
 .refreshlink:active{color:var(--plex)}
-.refreshlink .ic{color:var(--plex);font-size:12px;display:inline-flex}
+.refreshlink .ic{color:var(--plex);font-size:13px;display:inline-flex;align-items:center;justify-content:center}
 .refreshlink.spin .ic{animation:spin .8s linear infinite}
 .tab{flex:1;text-align:center;padding:14px 6px;border-radius:9px;font-size:13px;font-weight:600;color:var(--muted);border:none;background:transparent;cursor:pointer;transition:.18s;letter-spacing:-0.01em;white-space:nowrap;min-height:44px}
 .tab .n{font-family:'DM Mono',monospace;font-size:11px;margin-left:5px;opacity:.7}
@@ -47,10 +47,9 @@ h1 .dot{color:var(--plex)}
 .card:nth-child(even){background:#111722}
 .card.done{opacity:.72}
 .head{display:flex;align-items:stretch;gap:0;cursor:pointer}
-.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0;margin:11px 11px 0 0}
 .posterwrap{width:60px;align-self:stretch;border-radius:12px 0 0 12px;flex-shrink:0;background:var(--surface-2);position:relative;overflow:hidden;min-height:74px}
 .poster{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
-.posterwrap .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:22px;z-index:0}
+.posterwrap .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:20px;opacity:.6;z-index:0}
 .posterwrap.noimg .poster{display:none}
 .hmeta{flex:1;min-width:0;padding:11px 0 11px 12px}
 .htitle{font-size:15px;font-weight:600;letter-spacing:-0.01em;line-height:1.15;display:flex;align-items:center;gap:7px;min-width:0}
@@ -58,11 +57,10 @@ h1 .dot{color:var(--plex)}
 .htitle .pill{flex-shrink:0}
 .hsub{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;row-gap:4px}
 .hsub .sep{color:var(--faint)}
-.pill{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500}
-.pill.miss{background:rgba(229,72,77,.14);color:var(--miss)}
-.pill.ok{background:rgba(63,185,80,.13);color:var(--ok)}
-.pill.arch{background:var(--surface-2);color:var(--muted)}
-.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0;margin-top:4px}
+.pill{font-family:'DM Mono',monospace;font-size:11px;font-weight:500}
+.pill.miss{color:var(--miss)}
+.pill.arch{color:var(--muted)}
+.chev{color:var(--faint);font-size:12px;transition:.2s;flex-shrink:0;margin:11px 12px 0 0;display:inline-flex;align-items:center}
 .card.open .chev{transform:rotate(90deg)}
 .bar{height:3px;background:var(--surface-2);border-radius:3px;overflow:hidden;margin-top:8px}
 .statusrow{margin-top:7px;display:flex;align-items:center;gap:8px}
@@ -77,11 +75,11 @@ h1 .dot{color:var(--plex)}
 .slabel{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:4px 2px 5px;display:flex;align-items:center;gap:8px}
 .slabel .sname{flex:1}
 .slabel .scount{color:var(--faint);opacity:.7}
-.slabel .sfold{color:var(--faint);font-size:9px;transition:.2s}
+.slabel .sfold{color:var(--faint);font-size:10px;transition:.2s;display:inline-flex;align-items:center}
 .season.sopen .slabel .sfold{transform:rotate(90deg)}
 .season.complete .slabel{cursor:pointer;color:var(--ok);opacity:.65}
 .season.complete .slabel .scount{color:var(--ok)}
-.slabel .sdot{color:var(--ok)}
+.slabel .sdot{color:var(--ok);display:inline-flex;align-items:center;margin-right:2px}
 .sallbtn{color:var(--faint);cursor:pointer;font-size:10px;text-transform:none;letter-spacing:0}
 .sepisodes{display:block}
 .season.complete:not(.sopen) .sepisodes{display:none}
@@ -108,7 +106,7 @@ h1 .dot{color:var(--plex)}
 .archsec{margin-top:16px}
 .archhead{display:flex;align-items:center;gap:9px;color:var(--text);font-size:14px;font-weight:600;cursor:pointer;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:.15s}
 .archhead:active{background:var(--surface-2)}
-.archhead .chev{color:var(--plex);font-size:12px;transition:.2s}
+.archhead .chev{color:var(--plex);font-size:13px;transition:.2s;display:inline-flex;align-items:center}
 .archsec.open .archhead{border-radius:12px 12px 0 0}
 .archsec.open .archhead .chev{transform:rotate(90deg)}
 .archhead .n{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-left:auto}
@@ -131,9 +129,9 @@ h1 .dot{color:var(--plex)}
 .res img{width:38px;height:57px;border-radius:6px;object-fit:cover;background:var(--surface-2);flex-shrink:0}
 .res .t{font-size:14px;font-weight:600}
 .res .y{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-top:2px}
-.res .add{margin-left:auto;color:var(--plex);font-size:22px;flex-shrink:0}
+.res .add{margin-left:auto;color:var(--plex);font-size:20px;flex-shrink:0;display:inline-flex;align-items:center}
 .res.exists{opacity:.4;pointer-events:none}
-.res.exists .add{color:var(--ok);font-size:14px;font-family:'DM Mono',monospace}
+.res.exists .add{color:var(--ok);font-size:16px}
 .loading{color:var(--faint);font-size:13px;text-align:center;padding:20px}
 .stats{margin:14px 0 4px}
 .stats .inner{display:flex;justify-content:center;gap:14px}
@@ -143,10 +141,10 @@ h1 .dot{color:var(--plex)}
 .hide{display:none}
 .toast{position:fixed;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:10px 18px;border-radius:24px;font-size:13px;opacity:0;transition:.25s;z-index:50;pointer-events:none;white-space:nowrap}
 .filterbar{position:fixed;left:0;right:0;bottom:calc(16px + env(safe-area-inset-bottom));margin:0 auto;width:calc(100% - 40px);max-width:600px;display:flex;align-items:center;gap:10px;background:rgba(28,37,49,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:26px;padding:13px 18px;z-index:35;box-shadow:0 8px 28px rgba(0,0,0,.45)}
-.filterbar .fic{color:var(--plex);font-size:16px;flex-shrink:0}
+.filterbar .fic{color:var(--plex);font-size:17px;flex-shrink:0;display:inline-flex;align-items:center}
 .filterbar input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-family:'Outfit';font-size:15px}
 .filterbar input::placeholder{color:var(--muted)}
-.filterbar .fclear{color:var(--faint);font-size:14px;flex-shrink:0;cursor:pointer;opacity:0;transition:.15s;width:0;overflow:hidden}
+.filterbar .fclear{color:var(--faint);font-size:14px;flex-shrink:0;cursor:pointer;opacity:0;transition:.15s;width:0;overflow:hidden;display:inline-flex;align-items:center}
 .filterbar.has .fclear{opacity:1;width:auto}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 /* loading overlay */
@@ -168,7 +166,7 @@ h1 .dot{color:var(--plex)}
   <div class="syncwrap">
     <div class="sync" id="sync"><span class="d"></span><span id="syncTxt">…</span></div>
     <div class="updated" id="updated"></div>
-    <div class="refreshlink" id="refreshBtn" onclick="manualRefresh()"><span class="ic" id="refreshIc">⟳</span> Opdatér</div>
+    <div class="refreshlink" id="refreshBtn" onclick="manualRefresh()"><span class="ic" id="refreshIc"><svg viewBox="0 0 24 24" width="1em" height="1em"><path d="M20 11A8 8 0 1 0 18.4 16.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M20 5.5V11h-5.5" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Opdatér</div>
   </div>
 </header>
 <div class="tabs">
@@ -177,7 +175,7 @@ h1 .dot{color:var(--plex)}
   <button class="tab hide" id="archTab" data-tab="arch" onclick="switchTab('arch')">Arkiveret <span class="n" id="archCount"></span></button>
 </div>
 <div class="actions">
-  <button class="actbtn add" onclick="openSheet()"><span class="ic">＋</span> Tilføj serie</button>
+  <button class="actbtn add" onclick="openSheet()"><span class="ic"><svg viewBox="0 0 24 24" width="1em" height="1em"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span> Tilføj serie</button>
 </div>
 <div id="front"></div>
 <div id="done" class="hide"></div>
@@ -190,15 +188,15 @@ h1 .dot{color:var(--plex)}
 <div class="sheet" id="sheet">
   <div class="grab"></div>
   <h3>Tilføj serie</h3>
-  <div class="search"><span style="color:var(--muted)">⌕</span><input id="q" placeholder="Søg på TMDB…" autocomplete="off"></div>
+  <div class="search"><span style="color:var(--muted);display:inline-flex"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="20" y1="20" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="q" placeholder="Søg på TMDB…" autocomplete="off"></div>
   <div class="results" id="results"><div class="loading">Skriv for at søge.</div></div>
 </div>
 <div class="toast" id="toast"></div>
 
 <div class="filterbar" id="filterbar">
-  <span class="fic">⌕</span>
+  <span class="fic"><svg viewBox="0 0 24 24" width="17" height="17"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="20" y1="20" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
   <input id="filter" placeholder="Søg i dine serier…" autocomplete="off" oninput="applyFilter()">
-  <span class="fclear" id="fclear" onclick="clearFilter()">✕</span>
+  <span class="fclear" id="fclear" onclick="clearFilter()"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
 </div>
 
 <div class="overlay" id="overlay">
@@ -214,6 +212,11 @@ const TMDB_BEARER = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNGY1Zjk0MzUwYWQ0NGQzMGQxYT
 const SYNC_URL = "https://serier-sync.munksgaard91.workers.dev/";
 const SYNC_TOKEN = "K7mP2xQ9vR4nL8wF3tZ6yB1cD5hJ0aG";
 const STORAGE_KEY = "plex_serier_v1";
+/* ====== IKONER (SF Symbols-inspireret, tynd streg) ====== */
+const ICON_CHEV='<svg viewBox="0 0 24 24" width="1em" height="1em"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_PLUS='<svg viewBox="0 0 24 24" width="1em" height="1em"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+const ICON_CHECK='<svg viewBox="0 0 24 24" width="1em" height="1em"><polyline points="5 13 10 18 19 6" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_PHOTO='<svg viewBox="0 0 24 24" width="1em" height="1em"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8.3" cy="9.8" r="1.4" fill="currentColor"/><path d="M4.5 16l4.6-4.6 3.6 3.6 2.6-2.6 3.7 3.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const REFRESH_HOURS = 12; // hvor ofte episode-data hentes friskt fra TMDB
 
 /* ====== STATE ====== */
@@ -227,9 +230,22 @@ const hasWorker = SYNC_URL && SYNC_TOKEN && !SYNC_URL.includes("__");
 function setSync(cls,txt){const el=document.getElementById('sync');el.className='sync '+cls;document.getElementById('syncTxt').textContent=txt;}
 
 // læs kun localStorage (hurtigt, synkront) — ingen ventetid
+// fjerner ægte dubletter (samme id) — sikkerhedsnet mod historiske race-condition fejl
+function dedupeShows(){
+  const before=STATE.shows.length;
+  const seen=new Map();
+  STATE.shows.forEach(s=>{
+    const prev=seen.get(s.id);
+    // behold den med mest data, hvis der er en dublet
+    if(!prev || (s.seasons||[]).length>(prev.seasons||[]).length) seen.set(s.id,s);
+  });
+  STATE.shows=[...seen.values()];
+  if(STATE.shows.length!==before) saveState(); // dubletter fjernet -> gem med det samme, ellers overlever fixet ikke en genstart
+}
 function loadLocal(){
   try{const raw=localStorage.getItem(STORAGE_KEY);if(raw)STATE=Object.assign(STATE,JSON.parse(raw));}catch(e){}
   if(!STATE.shows||!STATE.shows.length){ STATE.shows=SEED; STATE.lastRefresh=0; }
+  dedupeShows();
 }
 // hent skyens data i baggrunden; nyeste (højeste lastRefresh) vinder
 async function syncFromCloud(){
@@ -242,7 +258,7 @@ async function syncFromCloud(){
       if(remote&&remote.shows&&remote.shows.length){
         const rLast=remote.lastRefresh||0, lLast=STATE.lastRefresh||0;
         // skyen er nyere ELLER lokal er tom seed -> brug skyen
-        if(rLast>=lLast){ STATE=remote; render(); }
+        if(rLast>=lLast){ STATE=remote; dedupeShows(); render(); }
         else { saveToCloud(); }   // lokal er nyere -> skub op
       } else {
         saveToCloud();            // sky tom -> initialisér den med lokal
@@ -269,18 +285,52 @@ async function saveToCloud(){
 
 /* ====== TMDB ====== */
 function tmdb(path){return fetch("https://api.themoviedb.org/3"+path,{headers:{Authorization:"Bearer "+TMDB_BEARER}}).then(r=>r.json());}
-// henter alle sæsoner inkl. Sæson 0 (specials), som TMDB ikke altid lister i /tv/{id}
-async function fetchSeasons(id, det){
+// henter sæsoner — men KUN dem der reelt kan ændre sig. En sæson er "final" (afsluttet for altid)
+// når alle dens afsnit er udkommet for et stykke tid siden, OG der findes en nyere sæson (eller serien er slut) —
+// sæsoner forsvinder aldrig igen på TMDB, så en final sæson behøver aldrig genhentes.
+// 'cachedSeasons' er seriens NUVÆRENDE gemte sæsoner (til at slå final-status op i).
+// 'skipS0Probe' springer tjekket for specials helt over når vi allerede VED at serien ikke har nogen.
+async function fetchSeasons(id, det, cachedSeasons, skipS0Probe){
+  cachedSeasons=cachedSeasons||[];
+  const cachedMap=new Map(cachedSeasons.map(se=>[se.s,se]));
   const listed=det.seasons.filter(s=>s.season_number>0).map(s=>s.season_number);
-  const hasS0=det.seasons.some(s=>s.season_number===0);
-  const nums=(hasS0?[0]:[]).concat(listed);
-  let sd=await Promise.all(nums.map(n=>tmdb(`/tv/${id}/season/${n}`)));
-  // hvis season 0 ikke var listet, prøv at hente den alligevel
-  if(!hasS0){
-    try{ const s0=await tmdb(`/tv/${id}/season/0`); if(s0&&s0.episodes&&s0.episodes.length) sd=[s0].concat(sd); }catch(e){}
+  const hasS0Listed=det.seasons.some(s=>s.season_number===0);
+  const probeS0=!hasS0Listed && !skipS0Probe;
+  const maxListed=listed.length?Math.max(...listed):0;
+
+  // ægte sæsoner der reelt skal (gen)hentes: dem vi enten ikke har, eller ikke har markeret som final
+  const needFetch=listed.filter(n=>{const c=cachedMap.get(n);return !c||!c.final;});
+  const s0Cached=cachedMap.get(0);
+  const fetchS0=(hasS0Listed && !(s0Cached&&s0Cached.final)) || probeS0;
+  const nums=(fetchS0?[0]:[]).concat(needFetch);
+
+  const FAILED=Symbol('failed');
+  // alle nødvendige sæson-kald køres parallelt i ét hug, ikke sekventielt efter hinanden. Fejl mærkes eksplicit.
+  const results=await Promise.all(nums.map(n=>tmdb(`/tv/${id}/season/${n}`).catch(()=>FAILED)));
+  const resultByNum=new Map(nums.map((n,i)=>[n,results[i]]));
+
+  // ægte sæsoner (season 0 kun hvis den var LISTET, ikke hvis den blot er en probe) må ikke fejle stille
+  const mustSucceed=needFetch.concat(hasS0Listed&&fetchS0?[0]:[]);
+  if(mustSucceed.some(n=>{const r=resultByNum.get(n);return r===FAILED||!r||!r.episodes;})) throw new Error('ufuldstændigt TMDB-svar for en rigtig sæson');
+
+  const t=today();
+  function toSeason(n,x){
+    const episodes=x.episodes.map(e=>({e:e.episode_number,name:e.name,air:e.air_date,have:false}));
+    const airedLongAgo=episodes.length>0 && episodes.every(e=>e.air && (Date.now()-new Date(e.air).getTime())>14*86400000);
+    const newerSeasonExists=n<maxListed;
+    const final=airedLongAgo && (newerSeasonExists || det.status==='Ended' || det.status==='Canceled');
+    return {s:n, episodes, final};
   }
-  return sd.map(x=>({s:x.season_number,episodes:(x.episodes||[]).map(e=>({e:e.episode_number,name:e.name,air:e.air_date,have:false}))})).filter(se=>se.episodes.length)
-           .sort((a,b)=>a.s-b.s);
+  const fresh=[];
+  for(const n of nums){
+    const r=resultByNum.get(n);
+    if(r && r!==FAILED && r.episodes && r.episodes.length) fresh.push(toSeason(n,r));
+  }
+  // behold de cachede sæsoner vi IKKE gen-hentede (fordi de allerede var final)
+  const kept=cachedSeasons.filter(se=> se.s===0 ? !fetchS0 : !needFetch.includes(se.s));
+  const seasons=[...kept,...fresh].sort((a,b)=>a.s-b.s);
+  const noSpecials=!seasons.some(se=>se.s===0);
+  return {seasons, noSpecials};
 }
 
 /* ====== HAVE-LOGIK (override vinder over seed) ====== */
@@ -341,7 +391,8 @@ function matchesFilter(i){
 function isArchived(s){
   const ended = s.status==='Ended' || s.status==='Canceled';
   if(!ended) return false;
-  return showStatus(s).missing===0;
+  const st=showStatus(s);
+  return st.done; // samme definition som "komplet" — kræver mindst ét udkommet afsnit, undgår 0/0-serier der ellers ville arkiveres forkert
 }
 function render(){
   let front=[],done=[],archived=[];
@@ -379,7 +430,7 @@ function render(){
     doneHTML = done.length?done.map(cardHTML).join(''):`<p style="color:var(--faint);font-size:14px;padding:20px 4px;text-align:center">Ingen gennemførte serier endnu.</p>`;
     if(archived.length){
       doneHTML += `<div class="archsec ${ARCH_OPEN?'open':''}" id="archsec">
-        <div class="archhead" onclick="toggleArchSec()"><span class="chev">▶</span> Arkiveret <span class="n">${archived.length}</span></div>
+        <div class="archhead" onclick="toggleArchSec()"><span class="chev">${ICON_CHEV}</span> Arkiveret <span class="n">${archived.length}</span></div>
         <div class="archbody">${archived.map(cardHTML).join('')}</div>
       </div>`;
     }
@@ -425,6 +476,11 @@ function clearFilter(){
 }
 function uptodate(){return `<div class="uptodate"><div class="big">Up to date 🎉</div><div class="sub">Vil du tilføje en ny serie?</div></div>`;}
 
+const OPEN_IDS=new Set(); // show-id'er der er foldet ud — bevares på tværs af re-renders
+function bodyHTML(idx){
+  const s=STATE.shows[idx];
+  return `${s.seasons.map(se=>seasonHTML(idx,se)).join('')}<div class="delbtn" onclick="removeShow(${idx})">Fjern serie</div>`;
+}
 function cardHTML(idx){
   const s=STATE.shows[idx],st=showStatus(s);
   const pct=st.airedTotal?Math.round(st.haveAired/st.airedTotal*100):0;
@@ -437,18 +493,21 @@ function cardHTML(idx){
   // Mangler-kort: pill + næste-afsnit får egne rækker under progressbaren
   let statusRows='';
   if(!st.done){
-    const missRow=`<div class="statusrow"><span class="pill miss">${missingLabel(st)} mangler</span></div>`;
+    const label=missingLabel(st);
+    const missRow=label?`<div class="statusrow"><span class="pill miss">${label} mangler</span></div>`:'';
     const nextRow=nx?`<div class="statusrow next"><span class="nextlabel">Næste afsnit</span><span class="nextval">${fmtNext(nx.air)}</span></div>`:'';
     statusRows=`<div class="bar"><i style="width:${pct}%"></i></div>${missRow}${nextRow}`;
   }
-  return `<div class="card ${st.done?'done':''}" data-idx="${idx}" data-id="${s.id}">
+  const isOpen=OPEN_IDS.has(s.id);
+  // kortets afsnit-liste bygges kun hvis kortet rent faktisk er foldet ud — sparer massivt DOM-arbejde på tværs af 132 serier ved hver opdatering
+  const bodyContent=isOpen?bodyHTML(idx):'';
+  return `<div class="card ${st.done?'done':''} ${isOpen?'open':''}" data-idx="${idx}" data-id="${s.id}">
     <div class="head" onclick="toggleCard(${idx})">
-      <div class="posterwrap"><img class="poster" src="${poster}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><span class="ph">▦</span></div>
+      <div class="posterwrap"><img class="poster" src="${poster}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><span class="ph">${ICON_PHOTO}</span></div>
       <div class="hmeta"><div class="htitle"><span class="tname">${esc(s.name)}</span>${archPill}</div><div class="hsub"><span>${s.year||''}</span><span class="sep">·</span><span>${meta}</span></div>${statusRows}</div>
-      <span class="chev">▶</span>
+      <span class="chev">${ICON_CHEV}</span>
     </div>
-    <div class="body">${s.seasons.map(se=>seasonHTML(idx,se)).join('')}
-      <div class="delbtn" onclick="removeShow(${idx})">Fjern serie</div>
+    <div class="body">${bodyContent}
     </div>
   </div>`;
 }
@@ -464,9 +523,9 @@ function seasonHTML(idx,se){
   const haveCount=se.episodes.filter(e=>epHave(s,se.s,e)).length;
   return `<div class="season ${complete?'complete':''} ${open?'sopen':''}" data-skey="${key}">
     <div class="slabel" onclick="toggleSeasonFold('${key}',event)">
-      <span class="sname">${complete?'<span class=\"sdot\">✓</span> ':''}${label}</span>
+      <span class="sname">${complete?`<span class="sdot">${ICON_CHECK}</span> `:''}${label}</span>
       <span class="scount">${haveCount}/${se.episodes.length}</span>
-      ${complete?'<span class="sfold">▶</span>':`<span class="sallbtn" onclick="toggleSeason(${idx},${se.s},event)">markér alle</span>`}
+      ${complete?`<span class="sfold">${ICON_CHEV}</span>`:`<span class="sallbtn" onclick="toggleSeason(${idx},${se.s},event)">markér alle</span>`}
     </div>
     <div class="sepisodes">${se.episodes.map(e=>epHTML(idx,se.s,e)).join('')}</div>
   </div>`;
@@ -498,7 +557,20 @@ function fmtNext(iso){const m=['jan.','feb.','mar.','apr.','maj','jun.','jul.','
 
 /* ====== INTERAKTION ====== */
 function haptic(ms){ try{ if(navigator.vibrate) navigator.vibrate(ms||10); }catch(e){} }
-function toggleCard(i){document.querySelector(`.card[data-idx="${i}"]`).classList.toggle('open');}
+function toggleCard(i){
+  const card=document.querySelector(`.card[data-idx="${i}"]`);
+  if(!card)return;
+  const s=STATE.shows[i];
+  const willOpen=!card.classList.contains('open');
+  if(willOpen){
+    OPEN_IDS.add(s.id);
+    card.querySelector('.body').innerHTML=bodyHTML(i);
+  }else{
+    OPEN_IDS.delete(s.id);
+    card.querySelector('.body').innerHTML=''; // frigør DOM med det samme
+  }
+  card.classList.toggle('open',willOpen);
+}
 function toggleEp(idx,sn,en,ev){
   if(ev)ev.stopPropagation();
   const s=STATE.shows[idx];const e=s.seasons.find(x=>x.s===sn).episodes.find(x=>x.e===en);
@@ -517,15 +589,14 @@ function toggleSeason(idx,sn,ev){
   rerenderKeepOpen(s.id);
 }
 function rerenderKeepOpen(id){
-  const open=[...document.querySelectorAll('.card.open')].map(c=>c.dataset.id);
-  render();
-  open.forEach(oid=>{const c=document.querySelector(`.card[data-id="${oid}"]`);if(c)c.classList.add('open');});
+  render(); // cardHTML afgør nu selv åben/lukket-tilstand ud fra OPEN_IDS — ingen manuel gendannelse nødvendig
 }
 function removeShow(idx){
   const s=STATE.shows[idx];
   if(!confirm(`Fjern "${s.name}" fra listen?`))return;
   STATE.shows.splice(idx,1);
   Object.keys(STATE.overrides).forEach(k=>{if(k.startsWith(s.id+':'))delete STATE.overrides[k];});
+  OPEN_IDS.delete(s.id);
   saveState();render();toast('Serie fjernet');
 }
 function switchTab(t){
@@ -555,20 +626,27 @@ function runSearch(q){
       return `<div class="res ${exists?'exists':''}" onclick="addShow(${r.id},this)">
         <img src="${img}" loading="lazy" onerror="this.style.visibility='hidden'">
         <div><div class="t">${esc(r.original_name||r.name)}</div><div class="y">${yr}</div></div>
-        <span class="add">${exists?'tilføjet':'＋'}</span>
+        <span class="add">${exists?ICON_CHECK:ICON_PLUS}</span>
       </div>`;
     }).join('');
   });
 }
+const ADDING_IDS=new Set();
 async function addShow(id,el){
   if(STATE.shows.some(s=>s.id===id))return;
+  if(ADDING_IDS.has(id))return;   // forhindrer dobbelt-tilføjelse ved dobbelt-tap
+  ADDING_IDS.add(id);
   if(el)el.querySelector('.add').textContent='…';
   try{
     const det=await tmdb("/tv/"+id);
-    const seasons=await fetchSeasons(id, det);
-    STATE.shows.push({id,name:det.original_name||det.name,poster:det.poster_path,year:(det.first_air_date||'').slice(0,4),status:det.status,seasons});
+    if(!det || !Array.isArray(det.seasons)) throw new Error('ugyldigt svar fra TMDB');
+    const {seasons, noSpecials}=await fetchSeasons(id, det, [], undefined);
+    if(seasons.length===0) throw new Error('serien har ingen afsnit-data på TMDB endnu');
+    if(STATE.shows.some(s=>s.id===id)){ ADDING_IDS.delete(id); return; } // dobbelt-tjek efter await
+    STATE.shows.push({id,name:det.original_name||det.name,poster:det.poster_path,year:(det.first_air_date||'').slice(0,4),status:det.status,seasons,noSpecials});
     saveState();render();closeSheet();toast('Serie tilføjet');
-  }catch(e){toast('Kunne ikke hente serie');if(el)el.querySelector('.add').textContent='＋';}
+  }catch(e){toast('Kunne ikke hente serie — prøv igen senere');if(el)el.querySelector('.add').innerHTML=ICON_PLUS;}
+  finally{ ADDING_IDS.delete(id); }
 }
 
 /* ====== SIDST OPDATERET ====== */
@@ -599,13 +677,17 @@ function ovProgress(done,total){
 
 /* ====== AUTO-REFRESH episode-data fra TMDB ====== */
 let refreshing=false;
-// afgør om en serie kan springes over: afsluttet OG vi har alt udkommet
+const RECHECK_ENDED_DAYS=30; // afsluttede serier tjekkes ikke for evigt — de kigges til igen med jævne mellemrum i tilfælde af en genoplivning
+// afgør om en serie kan springes over: afsluttet OG vi har alt udkommet OG vi har tjekket den for nylig
 function canSkip(s){
   if(!s.status) return false;                       // ukendt status -> tjek altid
+  if(!s.seasons || s.seasons.length===0) return false; // ingen data endnu/tømt -> tjek altid (selv-heling)
   const ended = s.status==='Ended' || s.status==='Canceled';
   if(!ended) return false;                          // igangværende -> tjek altid
   const st=showStatus(s);
-  return st.missing===0;                            // afsluttet + intet mangler -> skip
+  if(st.missing>0) return false;                    // afsluttet men mangler stadig noget -> tjek altid
+  const daysSince = s.lastChecked ? (Date.now()-s.lastChecked)/86400000 : Infinity;
+  return daysSince<=RECHECK_ENDED_DAYS;              // afsluttet + komplet + tjekket for nylig -> skip
 }
 async function refreshFromTMDB(force,firstRun){
   if(refreshing)return; refreshing=true;
@@ -617,18 +699,26 @@ async function refreshFromTMDB(force,firstRun){
   if(firstRun){ showOverlay(); ovProgress(0,total); }
 
   // kør i batches så det går hurtigt (parallelt), men uden at hamre API'et
-  const BATCH=10;
+  const BATCH=6;
   for(let i=0;i<targets.length;i+=BATCH){
     const slice=targets.slice(i,i+BATCH);
     await Promise.all(slice.map(async s=>{
       try{
         const det=await tmdb("/tv/"+s.id);
+        // TMDB fejl/rate-limit giver et JSON-svar uden 'seasons' — det er IKKE en rigtig serie-opdatering
+        if(!det || !Array.isArray(det.seasons)){ throw new Error('ugyldigt TMDB-svar'); }
         s.status=det.status||s.status;
-        const newSeasons=await fetchSeasons(s.id, det);
+        const {seasons:newSeasons, noSpecials}=await fetchSeasons(s.id, det, s.seasons, s.noSpecials);
+        // SIKKERHED: aldrig erstatte eksisterende afsnit med en tom liste — det er altid et fejlet kald, ikke en rigtig ændring
+        if(newSeasons.length===0 && s.seasons.length>0){ throw new Error('tomt sæson-svar, beholder eksisterende data'); }
         const oldMap={};s.seasons.forEach(se=>se.episodes.forEach(e=>{oldMap[se.s+':'+e.e]=e.have;}));
         newSeasons.forEach(se=>se.episodes.forEach(e=>{if(oldMap[se.s+':'+e.e]!==undefined)e.have=oldMap[se.s+':'+e.e];}));
         if(JSON.stringify(newSeasons)!==JSON.stringify(s.seasons)){s.seasons=newSeasons;changed=true;}
+        if(s.noSpecials!==noSpecials){s.noSpecials=noSpecials;changed=true;}
         s.poster=det.poster_path||s.poster;
+        // registrér hvornår en afsluttet+komplet serie sidst blev tjekket, så den kommer i spil igen efter RECHECK_ENDED_DAYS
+        const nowEnded=(s.status==='Ended'||s.status==='Canceled') && showStatus(s).missing===0;
+        if(nowEnded){ s.lastChecked=Date.now(); changed=true; }
       }catch(e){}
       done++;
       if(firstRun) ovProgress(done,total);
@@ -649,10 +739,13 @@ async function refreshFromTMDB(force,firstRun){
 (async()=>{
   setTimeout(hideOverlay,30000); // sikkerhed
   loadLocal();                   // synkront — ingen ventetid
-  const firstRun = !STATE.lastRefresh;
+  let firstRun = !STATE.lastRefresh;
   render();                      // vis med det samme
   if(!firstRun) hideOverlay();
   await syncFromCloud();         // hent sky først (nyeste vinder) — undgår race
+  // genvurdér: hvis skyen leverede allerede-frisk data (fx ny enhed, kendt bruger), er det ikke længere "første gang"
+  firstRun = !STATE.lastRefresh;
+  if(!firstRun) hideOverlay();
   refreshFromTMDB(false, firstRun); // så tjek TMDB i baggrunden
 })();
 </script>
